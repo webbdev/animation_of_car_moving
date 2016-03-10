@@ -7,13 +7,13 @@
     margin-top: 28%;
     z-index: 3;
 
-    -webkit-animation: carmove infinite; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+    -webkit-animation: carmove infinite;
+    -webkit-animation-duration: 3s;
     -webkit-animation-delay: 1s;
     -webkit-animation-timing-function: ease-in-out;
 
-    -moz-animation: carmove infinite; /* Chrome, Safari, Opera */
-    -moz-animation-duration: 3s; /* Chrome, Safari, Opera */
+    -moz-animation: carmove infinite;
+    -moz-animation-duration: 3s;
     -moz-animation-delay: 1s;
     -moz-animation-timing-function: ease-in-out;
 
