@@ -1,0 +1,240 @@
+<!--
+ 
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>NESTE ProDiesel</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/neste_anim.css">
+    <link rel="stylesheet" href="css/car_anim.css">
+   
+    <!-- <script type="text/javascript" charset="utf-8" src="neste_edgePreload.js"></script> -->
+     <script type="text/javascript" charset="utf-8" src="neste-mob_edgePreload.js"></script>
+    <style>
+        .edgeLoad-neste-mob { visibility:hidden; }
+        .edgeLoad-neste { visibility:hidden; }
+    </style>
+    <script src="edge-animation-handler.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+$( document ).ready(function() {
+   $( "#var1, #var2" ).keyup(formule);
+   function formule() {  
+     var a = $("#var1").val();
+     var b = $("#var2").val();
+     if(a!='') {
+        $("#var1l").hide();
+     } else {
+        $("#var1l").show();
+     }
+     if(b!='') {
+        $("#var2l").hide();
+     } else {
+        $("#var2l").show();
+     }
+     if(isNaN(a) || isNaN(b) ) {
+         $("#var3").val('');
+         return false;
+     }
+     var c = a/100*b;
+     var d = 2.66;
+     var f = c*d;
+     var g = 0.2; 
+     var ans = (f*g).toFixed(2);;
+     if($('.last .mb').css('display')!='none') {
+      $("#var3").val(ans+' kg');
+     } else {
+          $("#var3").val(ans);
+     }
+        
+    if($('#var1').val() && $('#var2').val()) {
+            var cc = 0;
+            var cc2 = 0;
+            var hh = AdobeEdge.getComposition("neste");
+            if(hh) {
+                cc = hh.getStage().getPosition();
+            }
+            var hh = AdobeEdge.getComposition("neste-mob");
+            if(hh) {
+                cc2 = hh.getStage().getPosition();
+            }
+            //AdobeEdge.getComposition("neste").getStage().getPosition();
+            //var cc2 = AdobeEdge.getComposition("neste-mob").getStage().getPosition();
+            if(cc!=1500) {
+          AdobeEdge.getComposition("neste").getStage().play(0);
+            }
+            if(cc2!=1250) { 
+          AdobeEdge.getComposition("neste-mob").getStage().play(0);
+            } 
+    } else {
+           $("#var3").val('');
+           if($('#var1').val()=='' && $('#var2').val()=='') { 
+               AdobeEdge.getComposition("neste").getStage().playReverse();
+               AdobeEdge.getComposition("neste-mob").getStage().playReverse();
+           }
+        }
+     return true;
+   }
+   function funhei() {
+       var max = 0;
+        $(".funkcijos .p").each(function(){
+            var h = $(this).height();
+            if(h>max) {
+                max = h;
+            }
+        });
+        $(".funkcijos .p").each(function(){
+            var h = $(this).height();
+            var p = (max-20) - h/2;
+            $(this).css('padding', p+'px 5%');
+        });
+   }
+   $(".funkcijos .funn").click(function(){
+      var no = $(this).attr('data-no');
+      $('.last .fun').hide();
+      $('.last .fun'+no).show();
+      $(".funkcijos .funn").removeClass('active');
+      $(this).addClass('active');
+      if($('.last .mb').css('display')!='none') {
+        
+        if($('.funn-'+no).css('display')!='none') {
+             $(this).removeClass('active');
+             $('.funn-'+no).hide();
+        } else {
+            $(".funkcijos p").hide();
+            $('.funn-'+no).show();   
+        }
+      }
+   });
+        
+   $( window ).load(function() {
+        funhei();
+    });
+    $( window ).resize(function() {
+        funhei();
+        if($('.calculator2 .mb').css('display')!='none') {
+            $('.funkcijos p').hide(); 
+            //$('.funn-1').show();
+        }
+    });
+});
+</script>
+</head>
+<body style="margin:0;padding:0;">
+  <div class="container">
+    <div class="header">
+      <div class="logo"><img src="images/logo.png"></div>
+        <div id="Stage" class="neste">
+            <div id="Stage_zeme" class="edgeLoad-neste"></div>
+            <div id="Stage_pilka14" class="edgeLoad-neste"></div>
+            <div id="Stage_pilka33" class="edgeLoad-neste"></div>
+            <div id="Stage_pilka5" class="edgeLoad-neste"></div>
+            <div id="Stage_pilka7" class="edgeLoad-neste"></div>
+            <div id="Stage_car" class="edgeLoad-neste"></div>
+            <div id="Stage_wheel" class="edgeLoad-neste"></div>
+            <div id="Stage_wheelCopy" class="edgeLoad-neste"></div>
+            <div id="Stage_frame" class="edgeLoad-neste"></div>
+            <div id="Stage_box" class="edgeLoad-neste"></div>
+            <div id="Stage_boxCopy" class="edgeLoad-neste"></div>
+            <div id="Stage_boxCopy2" class="edgeLoad-neste"></div>
+            <div id="Stage_kg" class="edgeLoad-neste"></div>
+            <div id="Stage_frametext2" class="edgeLoad-neste"></div>
+            <div id="Stage_mazesne" class="edgeLoad-neste"></div>
+            <div id="Stage_prodiesel" class="edgeLoad-neste"></div>
+            <div id="Stage_calculator" class="edgeLoad-neste calculator"></div>
+        </div>
+                
+        <div id="Stage2" class="neste-mob">
+            <div id="Stage2_zeme-mob2" class="edgeLoad-neste-mob"></div>
+            <div id="Stage2_pilka15" class="edgeLoad-neste-mob"></div>
+            <div id="Stage2_car" class="edgeLoad-neste-mob"></div>
+            <div id="Stage2_wheel" class="edgeLoad-neste-mob"></div>
+            <div id="Stage2_wheelCopy" class="edgeLoad-neste-mob"></div>
+            <div id="Stage2_frame-mob" class="edgeLoad-neste-mob"></div>
+            <div id="Stage2_box-mob" class="edgeLoad-neste-mob"></div>
+            <div id="Stage2_box-mobCopy" class="edgeLoad-neste-mob"></div>
+            <div id="Stage2_box-mobCopy2" class="edgeLoad-neste-mob"></div>
+            <div id="Stage2_prodiesel" class="edgeLoad-neste-mob"></div>
+        </div>
+      </div>    
+
+      <div id="neste-anim" class="onlyPC">
+          <div class="back"></div>
+          <div class="frame"></div>
+        <!--  <div class="title"></div> -->
+          <div class="car">
+            <div class="wheel"><img src="images/wheel.svg" alt="#" /></div>
+            <div class="wheel2"><img src="images/wheel.svg" alt="#" /></div>  
+          </div>
+        <!--  <div class="box b1"><input type="text"><div class="inner">km</div><div class="hinner">Jūsų kilometražas<br/>(per metus)</div></div>
+          <div class="box b2"><input type="text"><div class="inner">l/100 km</div><div class="hinner">Kuro suvartojimas<br/>(l/100 km)</div></div>
+          <div class="box b3"><input type="text" readonly=""><div class="inner">kg</div></div> 
+          <div class="mazesne"></div> -->
+          <div class="prodiesel"></div>
+          <div class="smoke">
+            <div class="smokey s12"></div>
+            <div class="smokey s11"></div>
+            <div class="smokey s10"></div>
+            <div class="smokey s9"></div>
+            <div class="smokey s8"></div>
+            <div class="smokey s7"></div>
+            <div class="smokey s6"></div>
+            <div class="smokey s5"></div>
+            <div class="smokey s4"></div>
+            <div class="smokey s3"></div>
+            <div class="smokey s2"></div>
+            <div class="smokey s1"></div>
+          </div>           
+      </div>
+
+      <div style="text-align: center;">
+      <div id="neste-anim-mob" class="onlyMB">
+        <div class="back"></div>
+        <div class="title"></div>
+        <div class="car">
+          <div class="wheel"><img src="images/wheel.svg" alt="" /></div>
+          <div class="wheel2"><img src="images/wheel.svg" alt="" /></div>
+        </div>
+        <div class="frame"></div>
+        <div class="box b1"><input type="text"><div class="inner">km</div><div class="hinner">Jūsų kilometražas<br/>(per metus)</div></div>
+        <div class="box b2"><input type="text"><div class="inner">l/100 km</div><div class="hinner">Kuro suvartojimas<br/>(l/100 km)</div></div>
+        <div class="box b3"><input type="text" readonly=""><div class="inner">kg</div></div>
+        <div class="mazesne"></div>
+        <div class="prodiesel"></div>
+        <div class="smoke">
+          <div class="smokey s12"></div>
+          <div class="smokey s11"></div>
+          <div class="smokey s10"></div>
+          <div class="smokey s9"></div>
+          <div class="smokey s8"></div>
+          <div class="smokey s7"></div>
+          <div class="smokey s6"></div>
+          <div class="smokey s5"></div>
+          <div class="smokey s4"></div>
+          <div class="smokey s3"></div>
+          <div class="smokey s2"></div>
+          <div class="smokey s1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/neste_anim.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+.car {
+    position: absolute;
+    background-image: url("../images/car.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 0 !important;
+    margin-top: 28%;
+    z-index: 3;
+
+    -webkit-animation: carmove infinite; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+    -webkit-animation-delay: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+
+    -moz-animation: carmove infinite; /* Chrome, Safari, Opera */
+    -moz-animation-duration: 3s; /* Chrome, Safari, Opera */
+    -moz-animation-delay: 1s;
+    -moz-animation-timing-function: ease-in-out;
+
+    animation: carmove infinite;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes carmove {
+    from {left: 0;}
+    to {left: 150%;}
+}
+@-moz-keyframes carmove {
+    from {left: 0;}
+    to {left: 150%;}
+}
+@-o-keyframes carmove {
+    from {left: 0;}
+    to {left: 150%;}
+}
+@keyframes carmove {
+    from {left: 0;}
+    to {left: 150%;}
+}
+
+.wheel,
+.wheel2 {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 0.6s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 1s;
+
+    -moz-animation-name: spin;
+    -moz-animation-duration: 0.6s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -moz-animation-delay: 1s;
+
+    -ms-animation-name: spin;
+    -ms-animation-duration: 0.6s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -ms-animation-delay: 1s;
+
+    -o-animation-name: spin;
+    -o-animation-duration: 0.6s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    -o-animation-delay: 1s;
+ 
+    animation-name: spin;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    z-index: 100;
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+
+@-o-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}

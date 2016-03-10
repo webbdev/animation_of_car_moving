@@ -1,0 +1,348 @@
+@font-face {
+  font-family: 'Chalet LondonSixty';
+  src: url('../fonts/Chalet-LondonSixty.woff');
+} 
+@font-face {
+  font-family: 'Chalet NewYorkEighty2';
+  src: url('../fonts/Chalet-NewYorkEighty.otf');
+}
+body {
+  background-image: url(../images/fonas.png);
+  background-repeat: repeat-x;
+    overflow-x: hidden;
+}
+.header {
+  background-color: white;
+}
+.logo {
+  margin: 20px 5%;
+}
+.last {
+  padding: 3%;
+  background-color: white;
+  font-size: 18px;
+  font-family: "Chalet";
+  color: rgb(88, 88, 88);
+  line-height: 1.2;
+  text-align: justifyLeft;
+}
+.container {
+    position: relative;
+    padding: 0;
+    
+}
+.calculator2 {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+.calculator2 img {
+    visibility: hidden;
+    width: 100%;
+}
+.calculator2 .mb { 
+    display: none;
+    max-width:380px;
+}
+.calculator {
+    position: absolute;
+    z-index: 20;
+    top: 34%; 
+    left: 7%;
+    width: 84%;
+    height: 62%;
+}
+.calculator input, .calculator label {
+    width: 26%;
+    height: 17%;
+    margin-right:7%;
+    background: transparent;
+    border: 0;
+    color: #999999;
+    font-size: 19px;
+    padding-left: 2%;
+    font-family: 'Chalet LondonSixty';
+    text-align: center;
+}
+.calculator label {
+    text-align: right;
+    width: 20%;
+    font-weight: normal;
+    position: absolute;
+    top: 1%;
+    
+    
+}
+#var2 {
+    width: 26%;
+    margin-right:9%;
+}
+#var2l {
+    left: 36%;
+}
+#var3 {
+    width: 20%;
+    color: #a2c616;
+}
+.funkcijos {
+    display: table;
+    width: 100%;
+    font-family: 'Chalet LondonSixty';
+}
+.funkcijos .funn {
+    display: table-cell;
+    text-align: center;
+    padding: 20px 0;
+    width: 14%;
+    background-color: #f4f8f0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.funkcijos div.active {
+    background-color: #ecf3dc;
+}
+.funkcijos .p {
+    border-left: 1px solid #a1c32c;
+    color: #a1c32c; 
+    font-size: 15px;
+    padding: 20px 5%;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    left: 1px;
+}
+.funkcijos .p hr {
+    position: absolute;
+    height: 100%;
+    width:1px;
+    background-color: #5b5b5b;
+    top: 0;
+    right: 1px;
+    margin: 0;
+    z-index: 1;
+    display: none;
+}
+.funkcijos .p .hr2 { 
+    right: -1px;
+    background-color: #f4f8f0;
+}
+.funkcijos .p span {
+    display: none;
+}
+.funkcijos div.active .p {
+    border-left: 1px solid #5b5b5b;
+    color: #5b5b5b;
+}
+.funkcijos div.active hr {
+    display: block;
+}
+.funkcijos .funnd-7 .hr2 { 
+    display: block;
+    background-color: #a1c32c;
+    right: 1px;
+}
+.funkcijos .funnd-7.active .hr2 {
+    background-color: #5b5b5b;
+}
+.funkcijos p {
+    display: none;
+    width: 92%;
+    margin: 10px 4% 10px 4%;
+    text-align: justify;
+} 
+.last {
+    clear: both;
+    font-family: 'Chalet LondonSixty';
+    font-size: 16px;
+    text-align: justify;
+}
+.last .fun {
+    display: none;
+}
+.last .mb {
+    display: none;
+}
+#Stage {
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+#Stage, .flow-wrapper:nth-child(3) {
+    display: block;
+}
+#Stage2, .flow-wrapper:last-child {
+    display: none;
+}
+@media (max-width: 1200px) { 
+    .calculator label {
+        width: 22%;
+        line-height: 1.2; 
+        
+    }
+}
+@media (max-width: 992px) {
+    .container {
+        width: 100%;
+    }
+    .calculator label {
+        font-size: 14px;
+        width: 20%;
+        line-height: 1.5; 
+    }
+    #var2l {
+        left: 37%;
+    }
+}
+@media (max-width: 770px) {
+     body {
+        background: #fff;
+     }
+    #Stage2, .flow-wrapper:last-child {
+        display: block;
+    }
+    #Stage, .flow-wrapper:nth-child(3) {
+        display: none;
+    }
+    .calculator2 .pc { 
+    display: none;
+    }
+    .calculator2 .mb { 
+        display: inline-block;
+    }
+    .calculator {
+        padding-top: 0;
+        width: 380px;
+        left: 50%;
+        margin-left: -190px;
+        height: 100%;
+        top: 0;
+    }
+    .calculator input, .calculator label { 
+        height: 8%;
+        display: block;
+        margin: 0 0 10% 15%;
+        width: 70%;
+    }
+    .calculator input {
+        text-align: center;
+        font-size: 40px;
+        color: #5c5b5b;
+    }
+    .calculator label { 
+        width: 50%;
+    }
+    #var1 {
+        margin-top: 50%;
+    }
+    #var2, #var3 {
+        width: 70%;
+    }
+    #var2 {
+        margin: 0 0 25% 15%;
+    }
+    
+    #var1l, #var2l {
+        left: 0;
+        top: 28%;
+    }
+    #var2l {
+        top: 42%;
+    }
+    .funkcijos {
+        background-color: #fff;
+    }
+    .funkcijos .funn {
+        display: block;
+        border-radius:10px 0 10px 10px;
+        width:94%;
+        margin: 0 3% 5px 3%;   
+    }
+    .funkcijos hr {
+        display: none !important;
+    }
+    .funkcijos .p {
+        border: 0;
+        font-size: 24px;
+        padding: 8px 5% !important;
+        margin: 0;
+    }
+    .funkcijos .p span {
+        display: block;
+        font-size: 14px;
+        color: #c2d88a;
+        position: relative;
+        top: 15px;
+    }
+    .funkcijos div.active .p {
+        border: 0;
+    }
+    .funkcijos .funn-1 {
+        display: block;
+    }
+    .funkcijos div.active span.glyphicon-triangle-bottom:before {
+        content: "\e253";
+    }
+    .funn-1 {
+        display: block;
+    }
+    .last .col-sm-9 {
+        display: none;
+    }
+    .last .col-sm-3 {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0 20px 0;
+    }
+    .last .pc {
+        display: none;
+    }
+    .last .mb {
+        display: block;
+    }
+}
+@media (max-width: 400px) {
+        .calculator {
+            width:100%;
+            margin: 0;
+            left: 0;
+        }
+        .row {
+            margin: 0;
+        }
+    /*.calculator input, .calculator label, #var2, #var3 {
+        margin: 0 0 10% 20%;
+        width: 60%;
+    }
+    #var1 {
+        margin-top: 48%;
+    }
+     #var2 {
+        margin: 0 0 25% 20%;
+        width: 60%;
+     }*/
+     #var3 {
+        height: 10%;
+     }
+     #neste-anim-mob .box .hinner, #neste-anim .box .hinner {
+        line-height: 1.1;
+            font-size: 16px !important;
+     }
+}
+/*@media (max-width: 380px) { 
+     #var1 {
+        margin-top: 44%;
+    }
+    #var2 {
+        margin-bottom: 23%;
+    }
+}
+@media (max-width: 350px) { 
+     #var1 {
+        margin-top: 40%;
+    }
+    #var2 {
+        margin-bottom: 21%;
+    }
+}*/
